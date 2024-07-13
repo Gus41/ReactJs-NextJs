@@ -1,0 +1,30 @@
+.box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+}
+.tampa{
+    width: 100px;
+    height: 25px;
+    background-color: #7aa944;
+}
+.body{
+    width: 90px;
+    height: 75px;
+    background-color: #5c7e32;
+}
+.laco_one{
+    position: absolute;
+    background-color: red;
+    width: 15px;
+    height: 100px;
+}
+.laco_two{
+    background-color: red;
+    position: absolute;
+    width: 90px;
+    height: 15px;
+    top: 40px;
+}

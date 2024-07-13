@@ -7,7 +7,7 @@ export default function Form(){
     const [users,SetUsers] = useState([])
     function renderUsers(){
         return users.map((u,i)=>{
-            return <li>{u.name} - {u.age}</li>
+            return <li key={i}>{u.name} - {u.age}</li>
         })
     }
 

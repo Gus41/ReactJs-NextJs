@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import Link from "next/link"
 
-export default function params(){
+export default function Params(){
     const router = useRouter()
     const name = router.query.name
     //pegando name direta pela url ( ?name = exemplo )

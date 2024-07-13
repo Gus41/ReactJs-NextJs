@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export default function teste(){
+export default function Teste(){
     
 
     const [res,setRes] = useState()

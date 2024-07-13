@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
-export default (
+export default function Id(
     req: NextApiRequest,
     res: NextApiResponse
-    ) =>{
+    ){
     if( req.method == 'GET' ){
         const id = req.query.id
 

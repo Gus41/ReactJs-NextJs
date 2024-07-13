@@ -8,10 +8,10 @@ interface user{
 
 const users : Array<user> = []
 
-export default (
+export default function Form(
     req: NextApiRequest,
     res: NextApiResponse
-    ) =>{
+    ){
         if(req.method == 'POST'){
             post(req,res)
         }else if(req.method == 'GET'){

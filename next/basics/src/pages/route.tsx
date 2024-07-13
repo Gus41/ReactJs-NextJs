@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-export default function route(){
+export default function Route(){
     const router = useRouter()
     
     return(

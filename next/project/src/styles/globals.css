@@ -1,4 +1,8 @@
+:root{
+  --are-dor-height:310px;
+  --are-dor-width:200px;
 
+}
 *{
   box-sizing: border-box;
 }

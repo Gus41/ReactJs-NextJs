@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     width: min-content;
+    margin: 0px auto;
 }
 .tampa{
     width: 100px;

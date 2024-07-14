@@ -1,0 +1,29 @@
+#game{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    height: 100vh;
+}
+.dors{
+    display: flex;
+    align-self: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+}
+.buttons p{
+    color: white;
+    background-color: gray;
+    text-decoration: underline gray;
+    padding: 10px;
+    border-radius: 10px;
+
+}

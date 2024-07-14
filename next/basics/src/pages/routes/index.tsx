@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-import route from "../route"
 export default function Route(){
     const router = useRouter()
 

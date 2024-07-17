@@ -1,4 +1,3 @@
-import { BlockList } from "net"
 
 export default class RespostaModel{
     public valor? : string
@@ -9,5 +8,12 @@ export default class RespostaModel{
         this.valor = valor
         this.certa = certa
         this.revelada = revelada
+    }
+
+    static certa(value: string){
+        return new RespostaModel(value,true)
+    }
+    static errada(value: string){
+        return new RespostaModel(value,false)
     }
 }

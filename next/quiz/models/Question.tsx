@@ -2,10 +2,10 @@ import { BlobOptions } from "buffer"
 import RespostaModel from "./RespostasModel"
 
 export default class QuestionModel{
-    public id : number | undefined
-    public enunciado : string | undefined
-    public respostas : RespostaModel[]
-    public acertou : boolean | undefined
+    public id? : number 
+    public enunciado? : string 
+    public respostas? : RespostaModel[]
+    public acertou? : boolean 
     //respondida : boolean
     constructor(id : number,enunciado : string ,respostas : any[],acertou : boolean){
         this.id = id

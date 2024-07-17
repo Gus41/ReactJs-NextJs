@@ -1,3 +1,4 @@
+import { random } from "../utils/random"
 import RespostaModel from "./RespostasModel"
 
 export default class QuestionModel{
@@ -6,7 +7,7 @@ export default class QuestionModel{
     public respostas : RespostaModel[]
     public acertou? : boolean 
     //respondida : boolean
-    constructor(id : number,enunciado : string ,respostas : any[],acertou : boolean){
+    constructor(id : number | undefined ,enunciado : string | undefined  ,respostas : any[] ,acertou : boolean | undefined ){
         this.id = id
         this.enunciado = enunciado
         this.respostas = respostas
@@ -19,5 +20,10 @@ export default class QuestionModel{
             }
         }
         return false
+    }
+    embaralharResps(){
+        let respo = random(this.respostas)
+        return new QuestionModel(this.id,this.enunciado,respo,this.acertou)
+        
     }
 }

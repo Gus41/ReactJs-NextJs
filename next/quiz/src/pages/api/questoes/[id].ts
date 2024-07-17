@@ -13,7 +13,7 @@ export default function handler(
   const question = questoes.filter(q=> id == q.id)
 
   if(question.length == 1){
-    res.status(200).json(question[0])
+    res.status(200).json(question[0].embaralharResps())
   }else{
     res.status(404).json({message:"Questão não encontrada"})
   }

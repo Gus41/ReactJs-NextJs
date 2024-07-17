@@ -6,12 +6,13 @@ export default class QuestionModel{
     public enunciado? : string 
     public respostas : RespostaModel[]
     public acertou? : boolean 
-    //respondida : boolean
-    constructor(id : number | undefined ,enunciado : string | undefined  ,respostas : any[] ,acertou : boolean | undefined ){
+    public respondida : boolean | undefined
+    constructor(id : number | undefined ,enunciado : string | undefined  ,respostas : any[] ,acertou : boolean | undefined , respondida = false ){
         this.id = id
         this.enunciado = enunciado
         this.respostas = respostas
         this.acertou = acertou
+        this.respondida = respondida
     }
     foiRespondida(){
         for( let resposta of this.respostas ){
@@ -24,6 +25,15 @@ export default class QuestionModel{
     embaralharResps(){
         let respo = random(this.respostas)
         return new QuestionModel(this.id,this.enunciado,respo,this.acertou)
-        
+    }
+    responderCom(indice : number){
+        const acertou = this.respostas[indice]?.certa
+        const respostas = this.respostas.map((r,i) => {
+            if( i == indice || r.certa ){
+                r.revelada = true
+            }
+            return r
+        })
+        return new QuestionModel(this.id,this.enunciado,respostas,acertou,true)
     }
 }

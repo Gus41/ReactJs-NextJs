@@ -11,7 +11,7 @@ export default function handler(
   const id = +req.query.id
 
   const question = questoes.filter(q=> id == q.id)
-
+  
   if(question.length == 1){
     res.status(200).json(question[0].embaralharResps())
   }else{

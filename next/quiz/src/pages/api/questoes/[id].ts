@@ -8,6 +8,13 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  res.status(200).json({ 'questao' : questoes[0]
-   });
+  const id = +req.query.id
+
+  const question = questoes.filter(q=> id == q.id)
+
+  if(question.length == 1){
+    res.status(200).json(question[0])
+  }else{
+    res.status(404).json({message:"Questão não encontrada"})
+  }
 }

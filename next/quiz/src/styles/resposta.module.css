@@ -1,0 +1,55 @@
+.resposta{
+  display: flex;
+  min-height: 70px;
+  margin: 10px;
+  min-width: 400px;
+  width: 80%;
+}
+.front, .back{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  justify-content: space-between;
+}
+.front{
+  border: 1px solid white;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+.back > div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  flex:1;
+  border-radius: 10px;
+}
+.certa{
+  border: 1px solid #00bf00;
+}
+.errada{
+  border: 1px solid red;
+}
+.letra{
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background-color: white;
+  color:black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+.valor{
+  font-size: 1.rem;
+  font-weight: bold;
+}
+
+.conteudo{
+  display: flex;
+  flex: 1;
+  position: relative;
+}

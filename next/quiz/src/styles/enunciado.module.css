@@ -1,0 +1,8 @@
+.enunciado{
+  display: flex;
+}
+.text{
+  color:white;
+  font-weight: 700;
+  font-size: 18px;
+}

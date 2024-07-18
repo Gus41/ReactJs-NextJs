@@ -2,12 +2,14 @@ import QuestionModel from "../../models/Question";
 import styles from '../styles/questao.module.css'
 import Enunciado from "./Enunciado";
 import Resposta from "./Resposta";
+import Timer from "./Timer";
 
 const letras = ['A','B','C','D','E','F','G','H','I','J','K','L',]
 
 interface QuestaoProps{
   questao: QuestionModel
-  onResonse: (indice: number) => void
+  responder: (indice: number) => void
+  finish : ()=> void
 }
 
 export default function Questao(props : QuestaoProps){
@@ -20,13 +22,14 @@ export default function Questao(props : QuestaoProps){
                letra={letras[i]}
                indice={i}
                key={i}
-               onResonse={props.onResonse}
+               responder={props.responder}
                />
     })
   }
   
   return(
     <div className={styles.questao}>
+      <Timer duracao={12} finish={props.finish} />
       <Enunciado  text={questao.enunciado}/>
       {renderRespostas()}
     </div>

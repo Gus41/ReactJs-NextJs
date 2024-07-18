@@ -5,14 +5,14 @@ interface RespostaPros{
   resposta: RespostaModel
   indice: number
   letra: string
-  onResonse: (indice: number) => void
+  responder: (indice: number) => void
 }
 
 export default function Resposta(props : RespostaPros){
   const resposta = props.resposta.valor
   
   return(
-    <div className={styles.resposta}  onClick={()=>props.onResonse(props.indice)}>
+    <div className={styles.resposta}  onClick={()=>props.responder(props.indice)}>
       <div className={styles.conteudo}>
         {!props.resposta.revelada?
         <div className={styles.front}>

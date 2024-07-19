@@ -42,11 +42,13 @@ export default function Home(){
 
   function onResponse(indice: number){
     if(!questao.respondida){
-      setQuestao(questao.responder(indice))
-      const certa = questao.acertou
+      const qa = questao.responder(indice)
+      setQuestao(qa)
+      console.log(qa)
+      const certa = qa.acertou
       if(certa){
-        let n = acertos + 1
-        setAcertos(n)
+        console.log('Acerto + 1')
+        setAcertos(acertos + 1)
       }
     }
   }

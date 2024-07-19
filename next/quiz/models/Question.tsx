@@ -27,13 +27,16 @@ export default class QuestionModel{
         return new QuestionModel(this.id,this.enunciado,respo,this.acertou)
     }
     responder(indice : number){
-        const acertou = this.respostas[indice]?.certa
+        const acertou = this.respostas[indice].certa
         const respostas = this.respostas.map((r,i) => {
             if( i == indice || r.certa ){
                 r.revelada = true
             }
             return r
         })
+        if(acertou){
+            console.log("ACERTO")
+        }
         return new QuestionModel(this.id,this.enunciado,respostas,acertou,true)
     }
 }

@@ -11,9 +11,9 @@ export default class RespostaModel{
     }
 
     static certa(value: string){
-        return new RespostaModel(value,true)
+        return new RespostaModel(value,true,false)
     }
     static errada(value: string){
-        return new RespostaModel(value,false)
+        return new RespostaModel(value,false,false)
     }
 }

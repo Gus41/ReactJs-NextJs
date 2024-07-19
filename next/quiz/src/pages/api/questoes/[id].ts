@@ -8,7 +8,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const id = +req.query.id
+  const id = req.query.id ? +req.query.id : 0
 
   const question = questoes.filter(q=> id == q.id)
   

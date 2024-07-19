@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import styles from '../styles/resultados.module.css'
 
 
-export default function resultados(){
+export default function Resultados(){
   const router = useRouter()
   const total = router.query.total? +router.query.total : 0
   const acertos = router.query.acertos? +router.query.acertos :0

@@ -11,6 +11,7 @@ const questaoMock = new QuestionModel(1,'Enunciado 0',[
   new RespostaModel('Resposta n 3',false,false),
 ],false) 
 const REPLIT_BASE_URL = 'https://93fe129d-04c1-4d2c-b3f2-a93b77119ad7-00-2qpsir5s2xr6b.riker.replit.dev/api'
+const VERCER_BASE_URL = 'https://react-js-next-js-hgru-1dmn0o8sg-gus41s-projects.vercel.app/api'
 const BASE_URL = 'http://localhost:3000/api'
 
 
@@ -21,12 +22,12 @@ export default function Home(){
   const router = useRouter()
 
   async function loadQuestionsIds(){
-    const response = await fetch(`${BASE_URL}/questionario`)
+    const response = await fetch(`${VERCER_BASE_URL}/questionario`)
     const questionsIds = await response.json()
     setIds(questionsIds)
   }
   async function loadQuestion(id : number){
-    const response = await fetch(`${BASE_URL}/questoes/${id}`)
+    const response = await fetch(`${VERCER_BASE_URL}/questoes/${id}`)
     const questaoJson : QuestionModel = await response.json()
     const quest = new QuestionModel(questaoJson.id,questaoJson.enunciado,questaoJson.respostas,questaoJson.acertou)
     

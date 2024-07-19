@@ -21,12 +21,12 @@ export default function Home(){
   const router = useRouter()
 
   async function loadQuestionsIds(){
-    const response = await fetch(`${REPLIT_BASE_URL}/questionario`)
+    const response = await fetch(`${BASE_URL}/questionario`)
     const questionsIds = await response.json()
     setIds(questionsIds)
   }
   async function loadQuestion(id : number){
-    const response = await fetch(`${REPLIT_BASE_URL}/questoes/${id}`)
+    const response = await fetch(`${BASE_URL}/questoes/${id}`)
     const questaoJson : QuestionModel = await response.json()
     const quest = new QuestionModel(questaoJson.id,questaoJson.enunciado,questaoJson.respostas,questaoJson.acertou)
     
@@ -47,7 +47,6 @@ export default function Home(){
       console.log(qa)
       const certa = qa.acertou
       if(certa){
-        console.log('Acerto + 1')
         setAcertos(acertos + 1)
       }
     }

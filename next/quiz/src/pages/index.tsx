@@ -22,12 +22,12 @@ export default function Home(){
   const router = useRouter()
 
   async function loadQuestionsIds(){
-    const response = await fetch(`${VERCER_BASE_URL}/questionario`)
+    const response = await fetch(`${REPLIT_BASE_URL}/questionario`)
     const questionsIds = await response.json()
     setIds(questionsIds)
   }
   async function loadQuestion(id : number){
-    const response = await fetch(`${VERCER_BASE_URL}/questoes/${id}`)
+    const response = await fetch(`${REPLIT_BASE_URL}/questoes/${id}`)
     const questaoJson : QuestionModel = await response.json()
     const quest = new QuestionModel(questaoJson.id,questaoJson.enunciado,questaoJson.respostas,questaoJson.acertou)
     

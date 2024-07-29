@@ -3,11 +3,9 @@ import 'firebase/auth'
 
 if(!firebase.apps.length){
   firebase.initializeApp({
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId:process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID
-
-
+    apiKey: "AIzaSyDYKRtx6Cpj4v8bQsHo4GHotroM0xmSC4c",
+    authDomain: "admin-template-d9b86.firebaseapp.com",
+     projectId: "admin-template-d9b86",
   })
 }
 

@@ -19,7 +19,7 @@ export default function Autenticacao(){
       showError("Erro no Login")
       return
     }
-    console.log("Registro")
+    console.log("Registro .")
   }
   return(
    <div className="flex flex-row h-screen items-center justify-center">

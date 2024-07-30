@@ -18,7 +18,7 @@ async function NormalUser(userFirebase: firebase.User): Promise<User> {
 }
 function manageCokie(loged:boolean){
   if(loged){
-    Cookies.set("auth",loged,{
+    Cookies.set("auth",`${loged}`,{
       expires: 7
     })
   }else{

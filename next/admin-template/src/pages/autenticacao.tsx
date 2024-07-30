@@ -22,11 +22,11 @@ export default function Autenticacao(){
     console.log(method)
     try{
       if(method == 'login'){
-        if(email && password){
+        if(email && password && login){
           await login(email,password)
         }
       }else{
-        if(email && password){
+        if(email && password && SignIn){
           await SignIn(email,password)
         }
       }

@@ -31,8 +31,8 @@ interface AuthContextProps {
   loginGoogle?: () => Promise<void>;
   logout? : ()=> void,
   loading? : boolean,
-  login : (email:string, senha:string)=> void,
-  SignIn : (email:string, senha:string)=> void,
+  login? : (email:string, senha:string)=> void,
+  SignIn? : (email:string, senha:string)=> void,
 }
 
 

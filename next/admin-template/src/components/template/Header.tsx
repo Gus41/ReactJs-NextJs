@@ -24,7 +24,7 @@ export default function Header(props : headerProps){
     <div className="flex">
      <Title title={props.title} subtitle={props.subtitle} />
       <div className="flex flex-grow justify-end items-center">
-        <ThemeButton dark={data.dark} toggle={data.toggle} />
+        <ThemeButton theme={data.theme} toggle={data.toggle} />
         <Link href='/profile'>
           {user?.imageUrl?  <img src={user?.imageUrl} alt="Avatar do Usuario"
             className="h-10 w-10 rounded-full cursor-pointer"/> :

@@ -1,11 +1,11 @@
 import { Sun, Moon } from "../icons"
 
 interface ThemeButtonProps{
-  dark?: boolean
+  theme?: string
   toggle?: ()=>void
 }
 export default function ThemeButton(props:ThemeButtonProps){
-  return !props.dark? (
+  return props.theme != 'dark'?(
     <div onClick={props.toggle} className="
       hidden sm:flex bg-gradient-to-r from-yellow-300 to-yellow-600
       lg:w-24 w-14 h-8 cursor-pointer p-1 rounded-full">

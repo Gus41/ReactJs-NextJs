@@ -7,11 +7,10 @@ export default function ForceAuth(props : any){
   const router = useRouter()
 
   function renderContent(){
-    return(
-      <>
-        {props.children}
-      </>
-    )
+    console.log("Autorizado")
+    console.log(props.children)
+    return<>{props.children}</>
+  
   }
   function renderLoading(){
     return(
@@ -20,11 +19,13 @@ export default function ForceAuth(props : any){
       </div>
     )
   }
-  if(!loading && user?.email){
-    renderContent()
-  }else if(loading){
-    return renderLoading()
-  }else{
-    router.push("/autenticacao")
-  }
+  if (loading) {
+      return renderLoading();
+    }
+
+    if (user) {
+      return renderContent();
+    } else{
+      router.push("/autenticacao")
+    }
 }

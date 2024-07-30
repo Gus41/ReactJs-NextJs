@@ -5,11 +5,11 @@ import { useState } from "react"
 
 export default function Autenticacao(){
 
-  const {user, loginGoogle} = useAuth()
+  const {loginGoogle, SignIn, login} = useAuth()
   
   const [method,setMethod] = useState('login')
-  const [email,setEmail] = useState()
-  const [password,setPassword] = useState()
+  const [email,setEmail] = useState<string>()
+  const [password,setPassword] = useState<string>()
   const [error,setError] = useState<null | string >(null)
 
   function showError(msg : string,time = 5){
@@ -17,13 +17,23 @@ export default function Autenticacao(){
     setTimeout(()=> setError(null),time * 1000)
   }
 
-  function submit(){
-    if(method == 'login'){
-      console.log('login')
-      showError("Erro no Login")
-      return
+  async function submit(){
+    console.log(`pass: ${password} - email: ${email}`)
+    console.log(method)
+    try{
+      if(method == 'login'){
+        if(email && password){
+          await login(email,password)
+        }
+      }else{
+        if(email && password){
+          await SignIn(email,password)
+        }
+      }
+    }catch(err : any){
+      showError(err.message || 'Erro')
     }
-    console.log("Registro .")
+
   }
   return(
    <div className="flex flex-row h-screen items-center justify-center">

@@ -1,25 +1,40 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 interface AppContextProps {
-  dark?: boolean;
+  theme?: string;
   toggle? : ()=> void
 }
 
 const AppContext = createContext<AppContextProps>({})
 
 export function AppProvider(props : any){
-  const [dark, setDark] = useState(true)
+  const [theme, setTheme] = useState('dark')
   
   function toggle(){
-    setDark(!dark)
+      if(theme == 'dark'){
+        setTheme('light')
+        localStorage.setItem('theme','light')
+        return
+      }
+    localStorage.setItem('theme','dark')
+    setTheme('dark')
   }
-  
+
+  useEffect(()=>{
+    const theme = localStorage.getItem("theme")
+    if(theme){
+       setTheme(theme)
+    }else{
+      setTheme("light")
+    }
+    
+  },[])
+
   return(
     <AppContext.Provider value={{
-      dark,
+      theme,
       toggle
     }}>
-      
       {props.children}
       
     </AppContext.Provider>

@@ -30,7 +30,9 @@ interface AuthContextProps {
   user?: User | null;
   loginGoogle?: () => Promise<void>;
   logout? : ()=> void,
-  loading? : boolean
+  loading? : boolean,
+  login : (email:string, senha:string)=> void,
+  SignIn : (email:string, senha:string)=> void,
 }
 
 
@@ -65,7 +67,7 @@ export function AuthProvider(props: any) {
        if(resp.user?.email){
          const u = await NormalUser(resp.user)
          setUser(u)
-         configureSection(resp.user)
+         await configureSection(resp.user)
   
          router.push("/")
        }
@@ -74,6 +76,39 @@ export function AuthProvider(props: any) {
      }
     
   }
+
+  async function login(email:string,senha:string){
+    try{
+      setLoading(true)
+      const resp = await firebase.auth().signInWithEmailAndPassword(email,senha)
+       if(resp.user?.email){
+         const u = await NormalUser(resp.user)
+         setUser(u)
+         await configureSection(resp.user)
+
+         router.push("/")
+       }
+    }finally{
+      setLoading(false)
+    }
+  }
+
+  async function SignIn(email:string,senha:string){
+    try{
+      setLoading(true)
+      const resp = await firebase.auth().createUserWithEmailAndPassword(email,senha)
+       if(resp.user?.email){
+         const u = await NormalUser(resp.user)
+         setUser(u)
+         await configureSection(resp.user)
+
+         router.push("/")
+       }
+    }finally{
+      setLoading(false)
+    }
+  }
+
 
   async function logout(){
     try{
@@ -100,7 +135,9 @@ export function AuthProvider(props: any) {
         user,
         loginGoogle,
         logout,
-        loading
+        loading,
+        login,
+        SignIn
       }}
     >
       {props.children}

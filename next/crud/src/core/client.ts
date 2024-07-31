@@ -19,7 +19,7 @@ export default class Client{
   }
 
   static getEmpty(){
-    return new Client('Name',0)
+    return new Client('Name',0,'7')
   }
   
 }

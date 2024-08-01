@@ -5,6 +5,7 @@ import Button from "./Button";
 
 interface FormProps{
   client : Client
+  changeClient : (client : Client)=>void
 }
 export default function Form(props: FormProps){
 
@@ -21,7 +22,8 @@ export default function Form(props: FormProps){
       <Input changeValue={setName} type="text" value={name} text="Name" />
       <Input changeValue={setAge} type="number" value={age} text="Age" />
       <div className="flex items-center justify-center">
-        <Button color="green" onClick={()=>console.log("click")}>
+        <Button color="green" onClick={()=>props.changeClient(new Client(name??'',age??0,id))}
+          >
           Save Data
         </Button>
       </div>

@@ -4,7 +4,7 @@ import Client from "@/core/client";
 import Button from "./Button";
 
 interface FormProps{
-  client : Client
+  client : Client | undefined
   changeClient : (client : Client)=>void
 }
 export default function Form(props: FormProps){

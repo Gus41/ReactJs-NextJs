@@ -1,7 +1,7 @@
 import Client from "@/core/client"
 
 interface TableProps {
-  clients: Client[],
+  clients: Client[] | undefined,
   selectClient?: (client: Client) => void,
   deleteClient?: (client: Client) => void
 }

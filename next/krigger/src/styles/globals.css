@@ -48,9 +48,12 @@ body {
     font-size: 6rem;
   }
   .text-2xl{
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
   .title-description{
     font-size: 1.1rem;
+  }
+  .p-8{
+    padding: 16px;
   }
 }

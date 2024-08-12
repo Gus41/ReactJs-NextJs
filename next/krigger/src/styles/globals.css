@@ -31,3 +31,26 @@ body {
     text-wrap: balance;
   }
 }
+.front{
+  background-color: #181818;
+}
+.border-bottom-white{
+  border-bottom: 1px solid white;
+}
+.title{
+  font-size: 12rem;
+}
+.title-description{
+  font-size: 1.4rem;
+}
+@media (max-width: 768px){
+  .title{
+    font-size: 6rem;
+  }
+  .text-2xl{
+    font-size: 1.1rem;
+  }
+  .title-description{
+    font-size: 1.1rem;
+  }
+}
